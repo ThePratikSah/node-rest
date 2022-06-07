@@ -6,26 +6,21 @@ exports.auth = async (req, res, next) => {
     if (!authHeader) {
       const error = new Error("Not Authorized");
       error.status = 401;
-      next(error);
+      return next(error);
     }
 
     const token = authHeader.split(" ")[1];
     let decodedToken;
-    try {
-      decodedToken = jwt.verify(token, "somesecret");
-    } catch (error) {
-      error.status = 500;
-      error.message = "Failed to verify token";
-      next(error);
-    }
+
+    decodedToken = jwt.verify(token, "somesecret");
     if (!decodedToken) {
       const error = new Error("Not Authorized");
       error.status = 401;
-      next(error);
+      return next(error);
     }
     req.email = decodedToken.email; //setting userId to request
     next();
   } catch (error) {
-    throw new Error("Failed to verify");
+    return next(error);
   }
 };

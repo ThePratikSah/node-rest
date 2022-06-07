@@ -4,6 +4,7 @@ const categoriesRoutes = require("./routes/category.routes");
 const productsRoutes = require("./routes/product.routes");
 const usersRoutes = require("./routes/user.routes");
 const orderRoutes = require("./routes/orders.routes");
+const isAuth = require("./middleware/auth");
 const cors = require("cors")({ origin: true });
 
 const app = express();
@@ -14,7 +15,11 @@ app.use(cors);
 app.use("/categories", categoriesRoutes);
 app.use("/products", productsRoutes);
 app.use("/users", usersRoutes);
-app.use("/orders", orderRoutes);
+app.use("/orders", isAuth.auth, orderRoutes);
+
+app.use((err, req, res) => {
+  return res.status(err.status).json({ msg: `Error: ${err.message}` });
+});
 
 conn
   .then(() => {
