@@ -2,9 +2,10 @@ const mongoose = require("mongoose");
 
 const couponSchema = mongoose.Schema({
   code: String,
+  description: String,
   type: String,
   amount: Number,
-  image_url: String,
+  minCart: Number,
 });
 
 module.exports = mongoose.model("coupon", couponSchema);

@@ -1,3 +1,5 @@
+const Coupons = require("../models/Coupons");
+
 // this method will help for writing data
 exports.create = async (req, Model) => {
   const data = new Model(req.body);
@@ -36,4 +38,43 @@ exports.update = async (req, Model) => {
 // this method will delete a record
 exports.deleteOne = async (req, Model) => {
   return await Model.deleteOne({ _id: req.params.id });
+};
+
+// this will validate the coupon code and returns the discounted price
+exports.validateCoupon = async (req) => {
+  const { cartValue, couponCode } = req.body;
+  // fetch the details of the coupon
+  const couponData = await Coupons.findOne({ code: couponCode });
+  if (!couponData) {
+    return {
+      error: true,
+      message: "No coupon found",
+      amountToPay: cartValue,
+    };
+  }
+
+  if (cartValue < couponData.minCart) {
+    return {
+      error: true,
+      message: `Cart value should be greater than ${couponData.minCart}`,
+      amountToPay: cartValue,
+    };
+  }
+
+  // here the cart value is greater than min cart
+  if (couponData.type === "flat") {
+    const amountToPay = +cartValue - +couponData.amount;
+    return {
+      error: false,
+      message: "Discount applied",
+      amountToPay,
+    };
+  } else {
+    const amountToPay = +cartValue - (couponData.amount / 100) * +cartValue;
+    return {
+      error: false,
+      message: "Discount applied",
+      amountToPay,
+    };
+  }
 };

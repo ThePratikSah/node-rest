@@ -5,6 +5,7 @@ const {
   readOne,
   update,
   deleteOne,
+  validateCoupon,
 } = require("../helpers/helper");
 const router = express.Router();
 const Coupon = require("../models/Coupons");
@@ -22,6 +23,12 @@ router.get("/:id", async (req, res) => {
 // this will create new coupon
 router.post("/", async (req, res) => {
   return res.status(201).json({ coupon: await create(req, Coupon) });
+});
+
+// this will validate a coupon
+router.post("/validate-coupon", async (req, res) => {
+  const { error, message, amountToPay } = await validateCoupon(req);
+  return res.status(error ? 400 : 200).json({ data: message, amountToPay });
 });
 
 // updating the coupon
