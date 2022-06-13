@@ -16,7 +16,7 @@ app.use(cors);
 app.use("/categories", categoriesRoutes);
 app.use("/products", productsRoutes);
 app.use("/users", usersRoutes);
-app.use("/orders", isAuth.auth, orderRoutes);
+app.use("/orders", orderRoutes);
 app.use("/coupons", couponRoutes);
 
 conn
