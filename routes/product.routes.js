@@ -10,7 +10,15 @@ const router = express.Router();
 const Product = require("../models/Product");
 
 router.get("/", async (req, res) => {
-  return res.status(200).json({ data: await read(req, Product) });
+  let totalItems = await Product.count();
+  return res.status(200).json({
+    data: await read(req, Product),
+    pagination: {
+      currentPage: +req.query.skip,
+      totalItems,
+      totalPages: Math.ceil(totalItems / +req.query.limit),
+    },
+  });
 });
 
 router.get("/:id", async (req, res) => {

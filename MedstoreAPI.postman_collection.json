@@ -1,0 +1,1610 @@
+{
+	"info": {
+		"_postman_id": "766a5f49-ea82-4a20-afb4-87363e367256",
+		"name": "Medstore API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "Update product",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Hair care product\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/products/62603f83ee255870b3f07d49",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"products",
+								"62603f83ee255870b3f07d49"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update product",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Hair care product\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/products/62603f83ee255870b3f07d49",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"products",
+										"62603f83ee255870b3f07d49"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Etag",
+									"value": "W/\"163-YqBV5AzX4496eCO+6F0uAnOMR/4\""
+								},
+								{
+									"key": "Function-Execution-Id",
+									"value": "izptggzp7z9n"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "X-Cloud-Trace-Context",
+									"value": "75c7bda5903cd187138f19866697434e;o=1"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 24 Apr 2022 06:28:28 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Google Frontend"
+								},
+								{
+									"key": "Content-Length",
+									"value": "355"
+								},
+								{
+									"key": "Alt-Svc",
+									"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\""
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"old_record\": {\n        \"_id\": \"62603f83ee255870b3f07d49\",\n        \"name\": \"Hair care\",\n        \"price\": 10,\n        \"selling_price\": 20,\n        \"quantity\": 10,\n        \"image_url\": \"https://firebasestorage.googleapis.com/v0/b/medstore-eaba8.appspot.com/o/images%2Fproduct%2Fimages.jpeg?alt=media&token=1666d84a-2af3-436a-8b95-362543d52c16\",\n        \"description\": \"Spicy\",\n        \"category\": \"generics\",\n        \"is_available\": true,\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get product",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "term",
+								"value": "pain",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{base_url}}/products",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"products"
+							],
+							"query": [
+								{
+									"key": "term",
+									"value": "new",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "skip",
+									"value": "0",
+									"disabled": true
+								},
+								{
+									"key": "fields",
+									"value": "name,quantity",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get product",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "term",
+										"value": "pain",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{base_url}}/products",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"products"
+									],
+									"query": [
+										{
+											"key": "term",
+											"value": "cold",
+											"disabled": true
+										},
+										{
+											"key": "limit",
+											"value": "1",
+											"disabled": true
+										},
+										{
+											"key": "skip",
+											"value": "0",
+											"disabled": true
+										},
+										{
+											"key": "fields",
+											"value": "name,quantity",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Etag",
+									"value": "W/\"167-pUZcOIxUbtMpwQIm5jdAtMaCBDA\""
+								},
+								{
+									"key": "Function-Execution-Id",
+									"value": "j8szcvcxk7cm"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "X-Cloud-Trace-Context",
+									"value": "d68f5218658df1f5938429b7d74d44bd;o=1"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 24 Apr 2022 06:32:30 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Google Frontend"
+								},
+								{
+									"key": "Content-Length",
+									"value": "359"
+								},
+								{
+									"key": "Alt-Svc",
+									"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\""
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"_id\": \"62603f83ee255870b3f07d49\",\n            \"name\": \"Hair care product\",\n            \"price\": 10,\n            \"selling_price\": 20,\n            \"quantity\": 10,\n            \"image_url\": \"https://firebasestorage.googleapis.com/v0/b/medstore-eaba8.appspot.com/o/images%2Fproduct%2Fimages.jpeg?alt=media&token=1666d84a-2af3-436a-8b95-362543d52c16\",\n            \"description\": \"Spicy\",\n            \"category\": \"generics\",\n            \"is_available\": true,\n            \"__v\": 0\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Get product by id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "term",
+								"value": "pain",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{base_url}}/products/62603f83ee255870b3f07d49",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"products",
+								"62603f83ee255870b3f07d49"
+							],
+							"query": [
+								{
+									"key": "fields",
+									"value": "name,quantity",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get product by id",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "term",
+										"value": "pain",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{base_url}}/products/62603f83ee255870b3f07d49",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"products",
+										"62603f83ee255870b3f07d49"
+									],
+									"query": [
+										{
+											"key": "term",
+											"value": "cold",
+											"disabled": true
+										},
+										{
+											"key": "limit",
+											"value": "1",
+											"disabled": true
+										},
+										{
+											"key": "skip",
+											"value": "0",
+											"disabled": true
+										},
+										{
+											"key": "fields",
+											"value": "name,quantity",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Etag",
+									"value": "W/\"15d-PukjaCjafY62kCbSAlD48vFO4bI\""
+								},
+								{
+									"key": "Function-Execution-Id",
+									"value": "j8szmrpt05u2"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "X-Cloud-Trace-Context",
+									"value": "09603f2220d3330d78f1aba938d56e0a;o=1"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 24 Apr 2022 06:28:01 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Google Frontend"
+								},
+								{
+									"key": "Content-Length",
+									"value": "349"
+								},
+								{
+									"key": "Alt-Svc",
+									"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\""
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"_id\": \"62603f83ee255870b3f07d49\",\n        \"name\": \"Hair care\",\n        \"price\": 10,\n        \"selling_price\": 20,\n        \"quantity\": 10,\n        \"image_url\": \"https://firebasestorage.googleapis.com/v0/b/medstore-eaba8.appspot.com/o/images%2Fproduct%2Fimages.jpeg?alt=media&token=1666d84a-2af3-436a-8b95-362543d52c16\",\n        \"description\": \"Spicy\",\n        \"category\": \"generics\",\n        \"is_available\": true,\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get product by category",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "term",
+								"value": "pain",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{base_url}}/products/category/generics",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"products",
+								"category",
+								"generics"
+							],
+							"query": [
+								{
+									"key": "fields",
+									"value": "name,quantity",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get product by category",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "term",
+										"value": "pain",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{base_url}}/products/category/generics",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"products",
+										"category",
+										"generics"
+									],
+									"query": [
+										{
+											"key": "fields",
+											"value": "name,quantity",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "393"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"189-ChKgSlmYT8+FxEAFvX0k+alMXlE\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 22 Jun 2022 18:59:23 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"_id\": \"62603f83ee255870b3f07d49\",\n            \"name\": \"Hair Treatment Product\",\n            \"price\": 12,\n            \"selling_price\": 20,\n            \"quantity\": 10,\n            \"image_url\": \"https://firebasestorage.googleapis.com/v0/b/medstore-eaba8.appspot.com/o/images%2Fproduct%2Fimages.jpeg?alt=media&token=1666d84a-2af3-436a-8b95-362543d52c16\",\n            \"description\": \"Spicy\",\n            \"category\": \"generics\",\n            \"is_available\": true,\n            \"__v\": 0,\n            \"prescriptionRequired\": false\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Add product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"A new medicine\",\n    \"price\": 232,\n    \"selling_price\": 232,\n    \"quantity\": 1000,\n    \"image_url\": \"\",\n    \"description\": \"\",\n    \"category\": \"\",\n    \"createdAt\": \"\",\n    \"is_available\": true,\n    \"prescriptionRequired\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/products",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete product",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/products/626048b1169eb6389dd3d234",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"products",
+								"626048b1169eb6389dd3d234"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Categories",
+			"item": [
+				{
+					"name": "Get Categories",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "term",
+								"value": "pain",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{base_url}}/categories",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"categories"
+							],
+							"query": [
+								{
+									"key": "term",
+									"value": "pain",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "skip",
+									"value": "0",
+									"disabled": true
+								},
+								{
+									"key": "fields",
+									"value": "name",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Categories by id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "term",
+								"value": "pain",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{base_url}}/categories/625f0cd585054e148a699158",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"categories",
+								"625f0cd585054e148a699158"
+							],
+							"query": [
+								{
+									"key": "fields",
+									"value": "name",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add new category",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Pain Killer\",\n    \"image_url\": \"https://www.mayoclinichealthsystem.org/-/media/national-files/images/hometown-health/2017/man-with-cough.jpg\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/categories",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"pain killer for headache\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/categories/625f1e40490d7b52b46c099e",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"categories",
+								"625f1e40490d7b52b46c099e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete category",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/categories/62604541169eb6389dd3d20c",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"categories",
+								"62604541169eb6389dd3d20c"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Get token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"pratiksah@hotmail.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/users",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Orders",
+			"item": [
+				{
+					"name": "Get orders",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/orders",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"orders"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get orders",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/orders",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"orders"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "289"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"121-RovXl5E7OXfWhiZSpF5NCYHYcUw\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 26 May 2022 17:47:28 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"_id\": \"628fbd1c3d81992588e028f6\",\n            \"email\": \"pratiksah@hotmail.com\",\n            \"products\": [\n                {\n                    \"productId\": \"62603f83ee255870b3f07d49\",\n                    \"quantity\": 1,\n                    \"price\": 20,\n                    \"name\": \"Hair Treatment Product\",\n                    \"_id\": \"628fbd1c3d81992588e028f7\"\n                }\n            ],\n            \"amount\": 20,\n            \"address\": {\n                \"Street\": \"Purnia\"\n            },\n            \"status\": \"pending\",\n            \"__v\": 0\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Get single order",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/orders/628fbd1c3d81992588e028f6",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"orders",
+								"628fbd1c3d81992588e028f6"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get single order",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/orders/628fbd1c3d81992588e028f6",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"orders",
+										"628fbd1c3d81992588e028f6"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "287"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"11f-xe20XYZxx4FyLvNUw1yo+P2//4Y\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 26 May 2022 17:47:53 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"_id\": \"628fbd1c3d81992588e028f6\",\n        \"email\": \"pratiksah@hotmail.com\",\n        \"products\": [\n            {\n                \"productId\": \"62603f83ee255870b3f07d49\",\n                \"quantity\": 1,\n                \"price\": 20,\n                \"name\": \"Hair Treatment Product\",\n                \"_id\": \"628fbd1c3d81992588e028f7\"\n            }\n        ],\n        \"amount\": 20,\n        \"address\": {\n            \"Street\": \"Purnia\"\n        },\n        \"status\": \"pending\",\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Place order",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"pratiksah@hotmail.com\",\n    \"products\": [\n        {\n            \"productId\": \"62603f83ee255870b3f07d49\",\n            \"quantity\": 1,\n            \"price\": 200,\n            \"name\": \"Hair Treatment Product\"\n        }\n    ],\n    \"amount\": 20,\n    \"address\": {\n        \"street\": \"Purnia\",\n        \"city\": \"Purnia\",\n        \"state\": \"Bihar\",\n        \"pin\": \"854326\"\n    },\n    \"status\": \"pending\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/orders",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"orders"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Place order",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"pratiksah@hotmail.com\",\n    \"products\": [\n        {\n            \"productId\": \"62603f83ee255870b3f07d49\",\n            \"quantity\": 1,\n            \"price\": 20,\n            \"name\": \"Hair Treatment Product\"\n        }\n    ],\n    \"amount\": 20,\n    \"address\": {\n        \"Street\": \"Purnia\"\n    },\n    \"status\": \"pending\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/orders",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"orders"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "287"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"11f-ItrjPtXsHDc4m7ZzyT0yOcU6Pns\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 26 May 2022 17:47:08 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"email\": \"pratiksah@hotmail.com\",\n        \"products\": [\n            {\n                \"productId\": \"62603f83ee255870b3f07d49\",\n                \"quantity\": 1,\n                \"price\": 20,\n                \"name\": \"Hair Treatment Product\",\n                \"_id\": \"628fbd1c3d81992588e028f7\"\n            }\n        ],\n        \"amount\": 20,\n        \"address\": {\n            \"Street\": \"Purnia\"\n        },\n        \"status\": \"pending\",\n        \"_id\": \"628fbd1c3d81992588e028f6\",\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Update order",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"status\": \"out for delivery\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/orders/628fbd1c3d81992588e028f6",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"orders",
+								"628fbd1c3d81992588e028f6"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update order",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"status\": \"out for delivery\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/orders/628fbd1c3d81992588e028f6",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"orders",
+										"628fbd1c3d81992588e028f6"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "293"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"125-iIEm1tW9D4SXN3OGagh7m1zREqc\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 26 May 2022 17:50:40 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"old_record\": {\n        \"_id\": \"628fbd1c3d81992588e028f6\",\n        \"email\": \"pratiksah@hotmail.com\",\n        \"products\": [\n            {\n                \"productId\": \"62603f83ee255870b3f07d49\",\n                \"quantity\": 1,\n                \"price\": 20,\n                \"name\": \"Hair Treatment Product\",\n                \"_id\": \"628fbd1c3d81992588e028f7\"\n            }\n        ],\n        \"amount\": 20,\n        \"address\": {\n            \"Street\": \"Purnia\"\n        },\n        \"status\": \"pending\",\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Coupons",
+			"item": [
+				{
+					"name": "Get all coupons",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/coupons/62a1ae6808d3019992fa428c",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"coupons",
+								"62a1ae6808d3019992fa428c"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get all coupons",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/coupons",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"coupons"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "159"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"9f-NT1WOQOIZrMaO3srPaLsekSax9U\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 09 Jun 2022 07:30:02 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"_id\": \"62a1a1733867716799253deb\",\n            \"code\": \"SALE100\",\n            \"description\": \"Flat 100 off on order above 400\",\n            \"type\": \"flat\",\n            \"amount\": 100,\n            \"minCart\": 400,\n            \"__v\": 0\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Get coupon by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/coupons/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"coupons",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get coupon by id",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/coupons/62a1a1733867716799253deb",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"coupons",
+										"62a1a1733867716799253deb"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "157"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"9d-rW04R++4T8JLhSVCSiuGP1L0lYg\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 09 Jun 2022 07:30:29 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"_id\": \"62a1a1733867716799253deb\",\n        \"code\": \"SALE100\",\n        \"description\": \"Flat 100 off on order above 400\",\n        \"type\": \"flat\",\n        \"amount\": 100,\n        \"minCart\": 400,\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete coupon",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/coupons/62a1a1733867716799253deb",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"coupons",
+								"62a1a1733867716799253deb"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete coupon",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/coupons/62a1a1733867716799253deb",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"coupons",
+										"62a1a1733867716799253deb"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "50"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"32-Z6qn/XbKpzCqeIBaWepsmOvIclM\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 09 Jun 2022 07:32:03 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"deleted\": {\n        \"acknowledged\": true,\n        \"deletedCount\": 1\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Add new coupon",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"code\": \"FLAT10\",\n    \"description\": \"Flat 10% off on order above 400\",\n    \"type\": \"percentage\",\n    \"amount\": 10,\n    \"minCart\": 400\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/coupons",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"coupons"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Add new coupon",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"code\": \"SALE100\",\n    \"description\": \"Flat 100 off on order above 400\",\n    \"type\": \"flat\",\n    \"amount\": 100,\n    \"minCart\": 400\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/coupons",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"coupons"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "159"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"9f-0HjWlSU0bu8rWWMleTv14DQKvlY\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 09 Jun 2022 07:29:56 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"coupon\": {\n        \"code\": \"SALE100\",\n        \"description\": \"Flat 100 off on order above 400\",\n        \"type\": \"flat\",\n        \"amount\": 100,\n        \"minCart\": 400,\n        \"_id\": \"62a1a1733867716799253deb\",\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Validate Coupon",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"cartValue\": 540,\n    \"couponCode\": \"FLAT10\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/coupons/validate-coupon",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"coupons",
+								"validate-coupon"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Validate Coupon",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"cartValue\": 410,\n    \"couponCode\": \"SALE100\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/coupons/validate-coupon",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"coupons",
+										"validate-coupon"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "45"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2d-/e0hVrbQ4b3JBxpiuxMTqmS+Pfw\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 09 Jun 2022 08:19:14 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": \"Discount applied\",\n    \"amountToPay\": 310\n}"
+						},
+						{
+							"name": "Validate Coupon",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"cartValue\": 540,\n    \"couponCode\": \"FLAT10\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/coupons/validate-coupon",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"coupons",
+										"validate-coupon"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "45"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2d-TFQu0VlI8UyRGzOc8O2eQgsHgFk\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 09 Jun 2022 08:26:27 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": \"Discount applied\",\n    \"amountToPay\": 486\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:3000",
+			"type": "default",
+			"disabled": true
+		},
+		{
+			"key": "base_url",
+			"value": "http://139.59.13.229:3000",
+			"type": "default"
+		}
+	]
+}
