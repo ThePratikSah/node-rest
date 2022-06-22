@@ -17,6 +17,10 @@ router.get("/:id", async (req, res) => {
   return res.status(200).json({ data: await readOne(req, Product) });
 });
 
+router.get("/category/:category", async (req, res) => {
+  return res.status(200).json({ data: await readOne(req, Product) });
+});
+
 router.post("/", async (req, res) => {
   return res.status(201).json({ product: await create(req, Product) });
 });
