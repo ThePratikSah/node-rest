@@ -9,6 +9,7 @@ exports.create = async (req, Model) => {
 // this method will help for general query
 exports.read = async (req, Model) => {
   let { limit = 10, skip = 0, term, fields = "" } = req.query;
+  let { categoryId } = req.params;
 
   if (fields) fields = fields.replace(",", " ");
   let query = {};
@@ -17,6 +18,13 @@ exports.read = async (req, Model) => {
       name: { $regex: ".*" + term + ".*", $options: "i" },
     };
   }
+  if (categoryId) {
+    return await Model.find(query, fields)
+      .where("categoryId")
+      .equals(categoryId)
+      .limit(limit)
+      .skip(skip * limit);
+  }
   return await Model.find(query, fields)
     .limit(limit)
     .skip(skip * limit);
@@ -24,12 +32,10 @@ exports.read = async (req, Model) => {
 
 // this method will help in getting single record
 exports.readOne = async (req, Model) => {
-  let { id, categoryId } = req.params;
+  let { id } = req.params;
   let { fields = "" } = req.query;
   if (fields) fields = fields.replace(",", " ");
-  if (categoryId) {
-    return await Model.where("categoryId").equals(categoryId);
-  }
+
   return await Model.findById(id, fields);
 };
 
