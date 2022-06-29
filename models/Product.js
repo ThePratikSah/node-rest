@@ -7,6 +7,7 @@ const productSchema = mongoose.Schema({
   image_url: String,
   description: String,
   category: String,
+  categoryId: String,
   createdAt: Date,
   is_available: Boolean,
   prescriptionRequired: {

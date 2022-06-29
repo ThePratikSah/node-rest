@@ -24,11 +24,11 @@ exports.read = async (req, Model) => {
 
 // this method will help in getting single record
 exports.readOne = async (req, Model) => {
-  let { id, category } = req.params;
+  let { id, categoryId } = req.params;
   let { fields = "" } = req.query;
   if (fields) fields = fields.replace(",", " ");
-  if (category) {
-    return await Model.where("category").equals(category);
+  if (categoryId) {
+    return await Model.where("categoryId").equals(categoryId);
   }
   return await Model.findById(id, fields);
 };

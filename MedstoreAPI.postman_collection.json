@@ -128,7 +128,7 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{base_url}}/products",
+							"raw": "{{base_url}}/products?limit=10&skip=0",
 							"host": [
 								"{{base_url}}"
 							],
@@ -143,13 +143,11 @@
 								},
 								{
 									"key": "limit",
-									"value": "1",
-									"disabled": true
+									"value": "10"
 								},
 								{
 									"key": "skip",
-									"value": "0",
-									"disabled": true
+									"value": "0"
 								},
 								{
 									"key": "fields",
@@ -254,6 +252,91 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"data\": [\n        {\n            \"_id\": \"62603f83ee255870b3f07d49\",\n            \"name\": \"Hair care product\",\n            \"price\": 10,\n            \"selling_price\": 20,\n            \"quantity\": 10,\n            \"image_url\": \"https://firebasestorage.googleapis.com/v0/b/medstore-eaba8.appspot.com/o/images%2Fproduct%2Fimages.jpeg?alt=media&token=1666d84a-2af3-436a-8b95-362543d52c16\",\n            \"description\": \"Spicy\",\n            \"category\": \"generics\",\n            \"is_available\": true,\n            \"__v\": 0\n        }\n    ]\n}"
+						},
+						{
+							"name": "Get product with pagination",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "term",
+										"value": "pain",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{base_url}}/products?limit=10&skip=0",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"products"
+									],
+									"query": [
+										{
+											"key": "term",
+											"value": "new",
+											"disabled": true
+										},
+										{
+											"key": "limit",
+											"value": "10"
+										},
+										{
+											"key": "skip",
+											"value": "0"
+										},
+										{
+											"key": "fields",
+											"value": "name,quantity",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "684"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2ac-zzXDVyzaU4MbL9rD1AwqlUWT/F8\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 22 Jun 2022 20:48:06 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"_id\": \"62603f83ee255870b3f07d49\",\n            \"name\": \"Hair Treatment Product\",\n            \"price\": 12,\n            \"selling_price\": 20,\n            \"quantity\": 10,\n            \"image_url\": \"https://firebasestorage.googleapis.com/v0/b/medstore-eaba8.appspot.com/o/images%2Fproduct%2Fimages.jpeg?alt=media&token=1666d84a-2af3-436a-8b95-362543d52c16\",\n            \"description\": \"Spicy\",\n            \"category\": \"generics\",\n            \"is_available\": true,\n            \"__v\": 0,\n            \"prescriptionRequired\": false\n        },\n        {\n            \"_id\": \"627caefd3575f2ad1ddda951\",\n            \"name\": \"A new medicine\",\n            \"price\": 232,\n            \"selling_price\": 232,\n            \"quantity\": 1000,\n            \"image_url\": \"\",\n            \"description\": \"\",\n            \"category\": \"hair\",\n            \"createdAt\": null,\n            \"is_available\": true,\n            \"prescriptionRequired\": true,\n            \"__v\": 0\n        }\n    ],\n    \"pagination\": {\n        \"currentPage\": 0,\n        \"totalItems\": 2,\n        \"totalPages\": 1\n    }\n}"
 						}
 					]
 				},
@@ -1098,6 +1181,99 @@
 		{
 			"name": "Coupons",
 			"item": [
+				{
+					"name": "Update coupon",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"isActive\": false\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/coupons/62a1ae6808d3019992fa428c",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"coupons",
+								"62a1ae6808d3019992fa428c"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update coupon",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"isActive\": false\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/coupons/62a1ae6808d3019992fa428c",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"coupons",
+										"62a1ae6808d3019992fa428c"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "183"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"b7-Yv1Tnv/bNcaGWs/ijRXIDldIsd8\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 27 Jun 2022 18:19:18 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"old_record\": {\n        \"isActive\": true,\n        \"_id\": \"62a1ae6808d3019992fa428c\",\n        \"code\": \"FLAT10\",\n        \"description\": \"Flat 10% off on order above 400\",\n        \"type\": \"percentage\",\n        \"amount\": 10,\n        \"minCart\": 400,\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				},
 				{
 					"name": "Get all coupons",
 					"request": {
