@@ -19,6 +19,12 @@ app.use("/users", usersRoutes);
 app.use("/orders", orderRoutes);
 app.use("/coupons", couponRoutes);
 
+app.get("/", (req, res) => {
+  res.status(200).json({
+    msg: "Thanks for your visit",
+  });
+});
+
 conn
   .then(() => {
     app.listen(PORT, () => console.log(`Connected and Running on ${PORT}`));
