@@ -10,6 +10,7 @@ exports.create = async (req, Model) => {
 exports.read = async (req, Model) => {
   let { limit = 10, skip = 0, term, fields = "" } = req.query;
   let { categoryId } = req.params;
+  let { email } = req;
 
   if (fields) fields = fields.replace(",", " ");
   let query = {};
@@ -18,6 +19,15 @@ exports.read = async (req, Model) => {
       name: { $regex: ".*" + term + ".*", $options: "i" },
     };
   }
+
+  if (email) {
+    return await Model.find(query, fields)
+      .where("email")
+      .equals(email)
+      .limit(limit)
+      .skip(skip * limit);
+  }
+
   if (categoryId) {
     return await Model.find(query, fields)
       .where("categoryId")

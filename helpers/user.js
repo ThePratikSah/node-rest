@@ -1,5 +1,6 @@
 const User = require("../models/User");
 const jwt = require("jsonwebtoken");
+const { SECRET } = require("../utils/constants");
 
 // adding new user to the database
 exports.newUser = async (req) => {
@@ -13,5 +14,5 @@ exports.newUser = async (req) => {
   }
 
   // generate a new json web token here with the user details and return it in the respones
-  return jwt.sign({ email }, "somesecret");
+  return jwt.sign({ email }, SECRET);
 };

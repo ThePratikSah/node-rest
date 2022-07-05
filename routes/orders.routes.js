@@ -1,9 +1,10 @@
 const express = require("express");
 const { read, create, readOne, update } = require("../helpers/helper");
+const { auth } = require("../middleware/auth");
 const Order = require("../models/Order");
 const router = express.Router();
 
-router.get("/", async (req, res) => {
+router.get("/", auth, async (req, res) => {
   return res.status(200).json({
     data: await read(req, Order),
   });
@@ -15,7 +16,7 @@ router.get("/:id", async (req, res) => {
   });
 });
 
-router.post("/", async (req, res) => {
+router.post("/", auth, async (req, res) => {
   return res.status(201).json({
     data: await create(req, Order),
   });

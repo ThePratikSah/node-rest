@@ -1,18 +1,19 @@
 const jwt = require("jsonwebtoken");
+const { SECRET } = require("../utils/constants");
 
 exports.auth = async (req, res, next) => {
   try {
-    const authHeader = req.get("authorization");
-    if (!authHeader) {
+    const authHeader = req.headers["authorization"];
+    const token = authHeader && authHeader.split(" ")[1];
+
+    if (!token) {
       const error = new Error("Not Authorized");
       error.status = 401;
       return next(error);
     }
 
-    const token = authHeader.split(" ")[1];
-    let decodedToken;
+    let decodedToken = jwt.verify(token, SECRET);
 
-    decodedToken = jwt.verify(token, "somesecret");
     if (!decodedToken) {
       const error = new Error("Not Authorized");
       error.status = 401;
