@@ -19,11 +19,6 @@ app.use("/users", usersRoutes);
 app.use("/orders", orderRoutes);
 app.use("/coupons", couponRoutes);
 
-app.use((err, req, res) => {
-  res.status(err.status);
-  res.json({ msg: err.message });
-});
-
 conn
   .then(() => {
     app.listen(PORT, () => console.log(`Connected and Running on ${PORT}`));
