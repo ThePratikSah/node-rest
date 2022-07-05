@@ -494,14 +494,14 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{base_url}}/products/category/generics",
+							"raw": "{{base_url}}/products/category/625f0cd585054e148a699158",
 							"host": [
 								"{{base_url}}"
 							],
 							"path": [
 								"products",
 								"category",
-								"generics"
+								"625f0cd585054e148a699158"
 							],
 							"query": [
 								{
@@ -529,14 +529,14 @@
 									"raw": ""
 								},
 								"url": {
-									"raw": "{{base_url}}/products/category/generics",
+									"raw": "{{base_url}}/products/category/625f0cd585054e148a699158",
 									"host": [
 										"{{base_url}}"
 									],
 									"path": [
 										"products",
 										"category",
-										"generics"
+										"625f0cd585054e148a699158"
 									],
 									"query": [
 										{
@@ -565,15 +565,15 @@
 								},
 								{
 									"key": "Content-Length",
-									"value": "393"
+									"value": "433"
 								},
 								{
 									"key": "ETag",
-									"value": "W/\"189-ChKgSlmYT8+FxEAFvX0k+alMXlE\""
+									"value": "W/\"1b1-3HCXXaiTQgyJOPq0NJd32+irkns\""
 								},
 								{
 									"key": "Date",
-									"value": "Wed, 22 Jun 2022 18:59:23 GMT"
+									"value": "Wed, 29 Jun 2022 21:49:19 GMT"
 								},
 								{
 									"key": "Connection",
@@ -585,7 +585,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"data\": [\n        {\n            \"_id\": \"62603f83ee255870b3f07d49\",\n            \"name\": \"Hair Treatment Product\",\n            \"price\": 12,\n            \"selling_price\": 20,\n            \"quantity\": 10,\n            \"image_url\": \"https://firebasestorage.googleapis.com/v0/b/medstore-eaba8.appspot.com/o/images%2Fproduct%2Fimages.jpeg?alt=media&token=1666d84a-2af3-436a-8b95-362543d52c16\",\n            \"description\": \"Spicy\",\n            \"category\": \"generics\",\n            \"is_available\": true,\n            \"__v\": 0,\n            \"prescriptionRequired\": false\n        }\n    ]\n}"
+							"body": "{\n    \"data\": [\n        {\n            \"_id\": \"62603f83ee255870b3f07d49\",\n            \"name\": \"Hair Treatment Product\",\n            \"price\": 12,\n            \"selling_price\": 20,\n            \"quantity\": 10,\n            \"image_url\": \"https://firebasestorage.googleapis.com/v0/b/medstore-eaba8.appspot.com/o/images%2Fproduct%2Fimages.jpeg?alt=media&token=1666d84a-2af3-436a-8b95-362543d52c16\",\n            \"description\": \"Spicy\",\n            \"is_available\": true,\n            \"__v\": 0,\n            \"prescriptionRequired\": false,\n            \"categoryId\": \"625f0cd585054e148a699158\",\n            \"category\": \"generics\"\n        }\n    ]\n}"
 						}
 					]
 				},

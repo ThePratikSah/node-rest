@@ -5,7 +5,7 @@ const productsRoutes = require("./routes/product.routes");
 const usersRoutes = require("./routes/user.routes");
 const orderRoutes = require("./routes/orders.routes");
 const couponRoutes = require("./routes/coupons.routes");
-const isAuth = require("./middleware/auth");
+const PORT = require("./utils/constants");
 const cors = require("cors")({ origin: true });
 
 const app = express();
@@ -19,10 +19,8 @@ app.use("/users", usersRoutes);
 app.use("/orders", orderRoutes);
 app.use("/coupons", couponRoutes);
 
-//this is some comment
-
 conn
   .then(() => {
-    app.listen(3000, () => console.log("Connected and Running"));
+    app.listen(PORT, () => console.log(`Connected and Running on ${PORT}`));
   })
   .catch((e) => console.log(e.message));
