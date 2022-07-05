@@ -1,10 +1,12 @@
 const express = require("express");
 const conn = require("./utils/db");
-const categoriesRoutes = require("./routes/category.routes");
-const productsRoutes = require("./routes/product.routes");
-const usersRoutes = require("./routes/user.routes");
-const orderRoutes = require("./routes/orders.routes");
-const couponRoutes = require("./routes/coupons.routes");
+const {
+  categoriesRoutes,
+  couponsRoutes,
+  ordersRoutes,
+  userRoutes,
+  productsRoutes,
+} = require("./routes");
 const { PORT } = require("./utils/constants");
 const cors = require("cors")({ origin: true });
 
@@ -15,11 +17,14 @@ app.use(cors);
 
 app.use("/categories", categoriesRoutes);
 app.use("/products", productsRoutes);
-app.use("/users", usersRoutes);
-app.use("/orders", orderRoutes);
-app.use("/coupons", couponRoutes);
+app.use("/users", userRoutes);
+app.use("/orders", ordersRoutes);
+app.use("/coupons", couponsRoutes);
 
-app.use((err, req, res, next) => {});
+app.use((err, req, res) => {
+  res.status(err.status);
+  res.json({ msg: err.message });
+});
 
 conn
   .then(() => {
