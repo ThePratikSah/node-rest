@@ -7,13 +7,13 @@ exports.auth = async (req, res, next) => {
     const token = authHeader && authHeader.split(" ")[1];
 
     if (!token) {
-      return res.status(401).json({ msg: "Failed to authorize" });
+      return next();
     }
 
     let decodedToken = jwt.verify(token, SECRET);
 
     if (!decodedToken) {
-      return res.status(401).json({ msg: "Failed to authorize" });
+      return next();
     }
     req.email = decodedToken.email; //setting userId to request
     next();
