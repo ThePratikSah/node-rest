@@ -7,6 +7,7 @@ const orderRoutes = require("./routes/orders.routes");
 const couponRoutes = require("./routes/coupons.routes");
 const { PORT } = require("./utils/constants");
 const cors = require("cors")({ origin: true });
+const fs = require("fs");
 
 const app = express();
 
