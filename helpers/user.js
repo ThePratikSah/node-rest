@@ -9,7 +9,6 @@ exports.newUser = async (req) => {
     if (!user) {
       const data = new User(req.body);
       user = await data.save();
-      console.log(user);
     }
 
     return jwt.sign({ email }, SECRET);

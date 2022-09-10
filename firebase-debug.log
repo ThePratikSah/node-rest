@@ -1,0 +1,104 @@
+[debug] [2022-09-10T15:06:59.194Z] ----------------------------------------------------------------------
+[debug] [2022-09-10T15:06:59.194Z] Command:       /usr/local/bin/node /usr/local/bin/firebase deploy --only functions
+[debug] [2022-09-10T15:06:59.195Z] CLI Version:   11.8.1
+[debug] [2022-09-10T15:06:59.195Z] Platform:      darwin
+[debug] [2022-09-10T15:06:59.195Z] Node Version:  v16.14.2
+[debug] [2022-09-10T15:06:59.195Z] Time:          Sat Sep 10 2022 20:36:59 GMT+0530 (India Standard Time)
+[debug] [2022-09-10T15:06:59.196Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-09-10T15:06:59.223Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-09-10T15:06:59.223Z] > authorizing via signed-in user (shivam3448@gmail.com)
+[debug] [2022-09-10T15:06:59.224Z] [iam] checking project medstore-eaba8 for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]
+[debug] [2022-09-10T15:06:59.224Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/medstore-eaba8:testIamPermissions [none]
+[debug] [2022-09-10T15:06:59.225Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/medstore-eaba8:testIamPermissions x-goog-quota-user=projects/medstore-eaba8
+[debug] [2022-09-10T15:06:59.225Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/medstore-eaba8:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2022-09-10T15:07:00.894Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/medstore-eaba8:testIamPermissions 200
+[debug] [2022-09-10T15:07:00.894Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/medstore-eaba8:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2022-09-10T15:07:00.895Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/medstore-eaba8/serviceAccounts/medstore-eaba8@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2022-09-10T15:07:00.895Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/medstore-eaba8/serviceAccounts/medstore-eaba8@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2022-09-10T15:07:02.682Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/medstore-eaba8/serviceAccounts/medstore-eaba8@appspot.gserviceaccount.com:testIamPermissions 200
+[debug] [2022-09-10T15:07:02.682Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/medstore-eaba8/serviceAccounts/medstore-eaba8@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[info] 
+[info] === Deploying to 'medstore-eaba8'...
+[info] 
+[info] i  deploying functions 
+[debug] [2022-09-10T15:07:02.688Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/medstore-eaba8 [none]
+[debug] [2022-09-10T15:07:03.239Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/medstore-eaba8 200
+[debug] [2022-09-10T15:07:03.239Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/medstore-eaba8 {"projectId":"medstore-eaba8","projectNumber":"183625821581","displayName":"medstore","name":"projects/medstore-eaba8","resources":{"hostingSite":"medstore-eaba8","realtimeDatabaseInstance":"medstore-eaba8-default-rtdb","storageBucket":"medstore-eaba8.appspot.com","locationId":"asia-south1"},"state":"ACTIVE","etag":"1_980e7a86-3575-491a-b4fd-ca9ab5e8d8da"}
+[info] i  functions: ensuring required API cloudfunctions.googleapis.com is enabled... 
+[info] i  functions: ensuring required API cloudbuild.googleapis.com is enabled... 
+[info] i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled... 
+[debug] [2022-09-10T15:07:03.242Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/medstore-eaba8/services/cloudfunctions.googleapis.com [none]
+[debug] [2022-09-10T15:07:03.244Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/medstore-eaba8/services/runtimeconfig.googleapis.com [none]
+[debug] [2022-09-10T15:07:03.245Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/medstore-eaba8/services/cloudbuild.googleapis.com [none]
+[debug] [2022-09-10T15:07:03.246Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/medstore-eaba8/services/artifactregistry.googleapis.com [none]
+[debug] [2022-09-10T15:07:05.294Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/medstore-eaba8/services/artifactregistry.googleapis.com 200
+[debug] [2022-09-10T15:07:05.295Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/medstore-eaba8/services/artifactregistry.googleapis.com [omitted]
+[info] ✔  artifactregistry: required API artifactregistry.googleapis.com is enabled 
+[debug] [2022-09-10T15:07:05.297Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/medstore-eaba8/services/runtimeconfig.googleapis.com 200
+[debug] [2022-09-10T15:07:05.297Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/medstore-eaba8/services/runtimeconfig.googleapis.com [omitted]
+[debug] [2022-09-10T15:07:05.298Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/medstore-eaba8/services/cloudfunctions.googleapis.com 200
+[debug] [2022-09-10T15:07:05.298Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/medstore-eaba8/services/cloudfunctions.googleapis.com [omitted]
+[info] ✔  functions: required API cloudfunctions.googleapis.com is enabled 
+[debug] [2022-09-10T15:07:05.299Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/medstore-eaba8/services/cloudbuild.googleapis.com 200
+[debug] [2022-09-10T15:07:05.299Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/medstore-eaba8/services/cloudbuild.googleapis.com [omitted]
+[info] ✔  functions: required API cloudbuild.googleapis.com is enabled 
+[debug] [2022-09-10T15:07:05.300Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/medstore-eaba8/adminSdkConfig [none]
+[debug] [2022-09-10T15:07:05.839Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/medstore-eaba8/adminSdkConfig 200
+[debug] [2022-09-10T15:07:05.840Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/medstore-eaba8/adminSdkConfig {"projectId":"medstore-eaba8","databaseURL":"https://medstore-eaba8-default-rtdb.europe-west1.firebasedatabase.app","storageBucket":"medstore-eaba8.appspot.com","locationId":"asia-south1"}
+[debug] [2022-09-10T15:07:05.841Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/medstore-eaba8/configs [none]
+[debug] [2022-09-10T15:07:06.622Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/medstore-eaba8/configs 200
+[debug] [2022-09-10T15:07:06.622Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/medstore-eaba8/configs {"configs":[{"name":"projects/medstore-eaba8/configs/database"},{"name":"projects/medstore-eaba8/configs/private"},{"name":"projects/medstore-eaba8/configs/project"},{"name":"projects/medstore-eaba8/configs/client"}]}
+[debug] [2022-09-10T15:07:06.624Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/medstore-eaba8/configs/database/variables [none]
+[debug] [2022-09-10T15:07:06.627Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/medstore-eaba8/configs/private/variables [none]
+[debug] [2022-09-10T15:07:06.629Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/medstore-eaba8/configs/project/variables [none]
+[debug] [2022-09-10T15:07:06.630Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/medstore-eaba8/configs/client/variables [none]
+[debug] [2022-09-10T15:07:07.127Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/medstore-eaba8/configs/private/variables 200
+[debug] [2022-09-10T15:07:07.127Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/medstore-eaba8/configs/private/variables {"variables":[{"name":"projects/medstore-eaba8/configs/private/variables/key","updateTime":"2022-02-02T21:38:22.218824155Z"}]}
+[debug] [2022-09-10T15:07:07.128Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/medstore-eaba8/configs/private/variables/key [none]
+[debug] [2022-09-10T15:07:07.167Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/medstore-eaba8/configs/client/variables 200
+[debug] [2022-09-10T15:07:07.167Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/medstore-eaba8/configs/client/variables {"variables":[{"name":"projects/medstore-eaba8/configs/client/variables/email","updateTime":"2022-02-02T21:38:22.214361123Z"}]}
+[debug] [2022-09-10T15:07:07.168Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/medstore-eaba8/configs/client/variables/email [none]
+[debug] [2022-09-10T15:07:07.171Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/medstore-eaba8/configs/database/variables 200
+[debug] [2022-09-10T15:07:07.172Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/medstore-eaba8/configs/database/variables {"variables":[{"name":"projects/medstore-eaba8/configs/database/variables/url","updateTime":"2022-02-03T08:40:24.510333438Z"}]}
+[debug] [2022-09-10T15:07:07.172Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/medstore-eaba8/configs/database/variables/url [none]
+[debug] [2022-09-10T15:07:07.302Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/medstore-eaba8/configs/project/variables 200
+[debug] [2022-09-10T15:07:07.302Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/medstore-eaba8/configs/project/variables {"variables":[{"name":"projects/medstore-eaba8/configs/project/variables/id","updateTime":"2022-02-02T21:38:21.971757655Z"}]}
+[debug] [2022-09-10T15:07:07.303Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/medstore-eaba8/configs/project/variables/id [none]
+[debug] [2022-09-10T15:07:07.606Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/medstore-eaba8/configs/private/variables/key 200
+[debug] [2022-09-10T15:07:07.607Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/medstore-eaba8/configs/private/variables/key {"name":"projects/medstore-eaba8/configs/private/variables/key","updateTime":"2022-02-02T21:38:22.218824155Z","text":"-----BEGIN PRIVATE KEY-----\\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC1uB0KD/0/h7B8\\n/79XtMmp1GvGnbn0Gi3s8NZUQ3R5SHfalwy7nG/kJ8cpq/GVqpISAAvbhgkQo1Eb\\n+Sm2OAQbJqUOkrAMrbGZ2np9jXAWhhIsLh2Zjk6CcM03bCwEMwD8Sr3qfqLcwQ55\\n20ffoUvO7HXuDOEq++QKv9+GItiasGe0ygi+YT8DwCCDJYuUj4Vt+ZPH520a/85X\\nlxEa8dwV8kNb2WWge8jVUOFCYsnP2YXpHskfItNmej42n+wPMRBu+kcuCUIH/LdI\\nr7d4Gso/Z8wQSLmxkadIS/uQ0Eg088P+5VjYI9vFCKLUrM1NlCyoHET20kIijD1y\\n4ndLpjK3AgMBAAECggEACsd2lYO4Sn3yhp+nCn1TXwsWL4xonOW2prDsjcgIjy8w\\nyNsf6rsPWhHP+xVTecTJ8F5nVajAPefqJkYj5saw26lxrgkef0oIWG+Ax5TNutBO\\nIKfForexyYQGcEyu2brqyoxmcpP7divPf4P14fqP5CDbp/jEnIefkdGq4SqM/bPy\\nLmNIWvoIJkEbszgweEMa/ii/mB1k5xSnfYIk2beh60s1MeU7r/jfeoyfagYW9Pvx\\nbPBcvd0X1wZ+EKEiyUdusN+SKYFSNoCcF951Kj4zWy1OiNezHXtR+yJJgcvUPpNN\\nQGBsREAlhCjG8w0e8zgCP0xSDR+B8tNyB2qMwWktqQKBgQD9jwTrKObrQZ9LzTbC\\nwzKR2TNUzskwPdUqjVQQ9vw+9l1J594rjpf6o6DB517+eA+sFcUfhtGSY+yIHdAv\\nj4qDZszRlKV+i9JrApgKPTYuA9ddHTZpBYmSP02zGgOQTQhDw47JHZS+rxj5eQjW\\nzTHLisDzXu5zS+zzBx2zk0ep3wKBgQC3eAWJK0x8XsX9rpj3eiuDQMOgzi7uG0Lm\\n0Rn75vLWyB87TGBFe1CphQRh9Ix4ugNxyXyE7vTqePd2vTsdG/gT6OncIDkTvMce\\nT3kaRJUFgVtPTDhIGWqIk10iOz9MYDIbEjwlM5nUdq++tJGwWL55yfvG+ndxkeEv\\nbkQLma/CKQKBgEnF3ux8zhMM2Mg5QQGRwZjl1SWLtMWwd+EVlawJ8IJxM9tY9y89\\nIcLu8Mr6Ao2PaR/shZoSo88v+5Xu9q+f1/E7a8Ret3gGPoacDpiMDsN8oqCY60fL\\nMKe4e2bs3rSRdSIiN90UGj8Quvd627ODqEVMba9ho4cwRBTBsUaaR3OJAoGAAYi7\\nYx49kXypYymmlcsrufk8qYeP1OXddViiQvz3YtxhhnlpBKu3TPOTyc3lrsy/YqAw\\nrlvhKGTCjPegGuo09NWpvvF2CLg3YgWAGbwhEt62CL+2aMPtpB63VKXyLY1QXfGV\\nFyqLSr+DULDp1vOnBBWwSUWm4gg6Pc9KOl6anaECgYEAu9LZygmQcYF50LRcai0w\\nFGE2VISrhYPO3Z4/nZnCWJokN3shX4MkHTC67c5yRPz1GiYumlTQ6CdMeKaohgBi\\ng0aRpB6E3toLE+BnFuUG0TXembJCeWdT+D2LuXajXiYgn0SuClFVpkzzJCm2zjUy\\n9CRUHYqO+Lv4PGQX7jH7MN0=\\n-----END PRIVATE KEY-----\\n"}
+[debug] [2022-09-10T15:07:07.652Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/medstore-eaba8/configs/client/variables/email 200
+[debug] [2022-09-10T15:07:07.652Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/medstore-eaba8/configs/client/variables/email {"name":"projects/medstore-eaba8/configs/client/variables/email","updateTime":"2022-02-02T21:38:22.214361123Z","text":"firebase-adminsdk-cg3ge@medstore-eaba8.iam.gserviceaccount.com"}
+[debug] [2022-09-10T15:07:07.655Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/medstore-eaba8/configs/database/variables/url 200
+[debug] [2022-09-10T15:07:07.655Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/medstore-eaba8/configs/database/variables/url {"name":"projects/medstore-eaba8/configs/database/variables/url","updateTime":"2022-02-03T08:40:24.510333438Z","text":"https://medstore-eaba8.firebaseio.com"}
+[debug] [2022-09-10T15:07:07.790Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/medstore-eaba8/configs/project/variables/id 200
+[debug] [2022-09-10T15:07:07.790Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/medstore-eaba8/configs/project/variables/id {"name":"projects/medstore-eaba8/configs/project/variables/id","updateTime":"2022-02-02T21:38:21.971757655Z","text":"medstore-eaba8"}
+[info] i  functions: preparing codebase default for deployment 
+[debug] [2022-09-10T15:07:07.792Z] Validating nodejs source
+[debug] [2022-09-10T15:07:08.469Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "dev": "nodemon index.js"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^10.0.2",
+    "firebase-functions": "^3.18.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.17.3",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  },
+  "private": true
+}
+[debug] [2022-09-10T15:07:08.469Z] Building nodejs source
+[debug] [2022-09-10T15:07:08.470Z] Failed to validate key PORT: Error: Key PORT is reserved for internal use.
+[error] Error: Failed to load environment variables from .env.:
+[error] - Error Key PORT is reserved for internal use.

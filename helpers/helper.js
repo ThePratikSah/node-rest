@@ -25,6 +25,7 @@ exports.read = async (req, Model) => {
       .where("email")
       .equals(email)
       .limit(limit)
+      .sort({})
       .skip(skip * limit);
   }
 

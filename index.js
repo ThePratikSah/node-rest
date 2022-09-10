@@ -1,13 +1,12 @@
 const express = require("express");
-const conn = require("./utils/db");
 const categoriesRoutes = require("./routes/category.routes");
 const productsRoutes = require("./routes/product.routes");
 const usersRoutes = require("./routes/user.routes");
 const orderRoutes = require("./routes/orders.routes");
 const couponRoutes = require("./routes/coupons.routes");
-const { PORT } = require("./utils/constants");
 const cors = require("cors")({ origin: true });
-const fs = require("fs");
+const functions = require("firebase-functions");
+const conn = require("./utils/db");
 
 const app = express();
 
@@ -26,8 +25,7 @@ app.get("/", (req, res) => {
   });
 });
 
-conn
-  .then(() => {
-    app.listen(PORT, () => console.log(`Connected and Running on ${PORT}`));
-  })
-  .catch((e) => console.log(e.message));
+// app.listen(3001, () => console.log(`Connected and Running on ${3001}`));
+
+// serverless code
+exports.app = functions.region("asia-east2").https.onRequest(app);
