@@ -5,6 +5,7 @@ const {
   readOne,
   update,
   deleteOne,
+  capitalize,
 } = require("../helpers/helper");
 const router = express.Router();
 const Product = require("../models/Product");
@@ -32,12 +33,13 @@ router.get("/category/:categoryId", async (req, res) => {
 
 router.post("/", async (req, res) => {
   // get the categoryId from the req.body obj
-  const { categoryId } = req.body;
+  const { categoryId, name } = req.body;
   // fetch the name of the category based on id
   const doc = await Category.findById(categoryId, "name");
   // add the name in the req.body obj
 
   req.body.category = doc?.name || "";
+  req.body.name = capitalize(name);
 
   // create new product based on new req.body object
   return res.status(201).json({ product: await create(req, Product) });

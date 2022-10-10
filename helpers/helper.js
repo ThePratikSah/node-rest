@@ -8,7 +8,7 @@ exports.create = async (req, Model) => {
 
 // this method will help for general query
 exports.read = async (req, Model) => {
-  let { limit = 10, skip = 0, term, fields = "" } = req.query;
+  let { limit, skip, term, fields = "" } = req.query;
   let { categoryId } = req.params;
   let { email } = req;
 
@@ -98,3 +98,7 @@ exports.validateCoupon = async (req) => {
     };
   }
 };
+
+exports.capitalize = (str) => {
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}
